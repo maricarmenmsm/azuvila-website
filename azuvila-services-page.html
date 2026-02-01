@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Azuvila</title>
+    <meta name="description" content="Comprehensive advisory services designed to strengthen your competitive position and accelerate growth.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy: #0a2632;
+            --light-blue: #7dd3f5;
+            --gray-bg: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 0.2rem;
+            color: white;
+        }
+        
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--light-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--light-blue);
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #164558 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+        
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+        }
+
+        .cta-section {
+            background: var(--gray-bg);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: var(--navy);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .cta-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(10, 38, 50, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-section">
+                <img src="logo.png" alt="Azuvila Logo" class="logo-icon">
+                <div class="logo-text">
+                    <h1>AZUVILA</h1>
+                    <p>Connecting Purpose with Partners</p>
+                </div>
+            </a>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h2>Service Offerings</h2>
+        <p>Comprehensive advisory services designed to strengthen your competitive position and accelerate growth</p>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Growth & Business Development</h3>
+                    <ul>
+                        <li>Federal market entry strategy and positioning</li>
+                        <li>Business development operations design</li>
+                        <li>Pipeline development and opportunity qualification</li>
+                        <li>Competitive intelligence and market analysis</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Capture & Proposal Management</h3>
+                    <ul>
+                        <li>Capture strategy and planning</li>
+                        <li>Win theme and value proposition development</li>
+                        <li>Proposal development and quality assurance</li>
+                        <li>Color review facilitation and compliance</li>
+                        <li>Orals preparation and coaching</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Partnership & Teaming Strategy</h3>
+                    <ul>
+                        <li>Partner identification and evaluation</li>
+                        <li>Teaming agreement development</li>
+                        <li>Joint venture structuring and administration</li>
+                        <li>Strategic alliance management</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Organizational Development</h3>
+                    <ul>
+                        <li>Process improvement and system optimization</li>
+                        <li>Portfolio management and oversight</li>
+                        <li>Cross-sector partnership facilitation</li>
+                        <li>Organizational transformation strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to grow?</h3>
+            <p>Let's discuss how Azuvila can support your business development goals</p>
+            <a href="index.html#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Azuvila. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navList = document.querySelector('nav ul');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+                navList.style.flexDirection = 'column';
+                navList.style.position = 'absolute';
+                navList.style.top = '80px';
+                navList.style.right = '2rem';
+                navList.style.background = 'var(--navy)';
+                navList.style.padding = '1rem';
+                navList.style.borderRadius = '8px';
+                navList.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
