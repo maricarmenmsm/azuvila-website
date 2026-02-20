@@ -93,6 +93,12 @@
         nav a:hover {
             color: var(--light-blue);
         }
+
+        nav a.nav-active {
+            color: var(--light-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 2px;
+        }
         
         .mobile-menu {
             display: none;
@@ -209,6 +215,25 @@
             box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
         }
         
+        .cta-section {
+            background: var(--gray-bg);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: var(--navy);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .cta-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
         /* Footer */
         footer {
             background: #000;
@@ -314,27 +339,62 @@
         </div>
     </section>
 
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to grow?</h3>
+            <p>Let's discuss how Azuvila can support your business development goals</p>
+            <a href="index.html#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Azuvila. All rights reserved.</p>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navList = document.querySelector('nav ul');
-            if (navList.style.display === 'flex') {
-                navList.style.display = 'none';
-            } else {
-                navList.style.display = 'flex';
-                navList.style.flexDirection = 'column';
-                navList.style.position = 'absolute';
-                navList.style.top = '80px';
-                navList.style.right = '2rem';
-                navList.style.background = 'var(--navy)';
-                navList.style.padding = '1rem';
-                navList.style.borderRadius = '8px';
-                navList.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+        // Active nav link
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav ul a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('nav-active');
             }
+        });
+
+        // Mobile menu toggle
+        const mobileBtn = document.querySelector('.mobile-menu');
+        const navList = document.querySelector('nav ul');
+
+        function openMenu() {
+            navList.style.display = 'flex';
+            navList.style.flexDirection = 'column';
+            navList.style.position = 'absolute';
+            navList.style.top = '80px';
+            navList.style.right = '2rem';
+            navList.style.background = 'var(--navy)';
+            navList.style.padding = '1rem';
+            navList.style.borderRadius = '8px';
+            navList.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+            mobileBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            navList.style.display = 'none';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        mobileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navList.style.display === 'flex' ? closeMenu() : openMenu();
+        });
+
+        document.addEventListener('click', function(e) {
+            if (navList.style.display === 'flex' && !navList.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     </script>
 </body>
