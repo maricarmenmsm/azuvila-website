@@ -93,6 +93,12 @@
         nav a:hover {
             color: var(--light-blue);
         }
+
+        nav a.nav-active {
+            color: var(--light-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 2px;
+        }
         
         .mobile-menu {
             display: none;
@@ -311,9 +317,20 @@
             width: 100%;
             transition: transform 0.3s;
         }
-        
+
         .submit-button:hover {
             transform: translateY(-2px);
+        }
+
+        .form-success {
+            display: none;
+            background: rgba(125, 211, 245, 0.15);
+            border: 1px solid var(--light-blue);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 1rem;
         }
         
         /* Footer */
@@ -384,7 +401,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Approach</h2>
-                <p>A strategic process to transforming your business development capabilities</p>
+                <p>A strategic process for transforming your business development capabilities</p>
             </div>
             <div class="process-image-container">
                 <img src="approach.png" alt="Azuvila Approach" class="process-image">
@@ -457,6 +474,7 @@
                             <textarea id="message" name="message" required placeholder="Tell us about your business development needs..."></textarea>
                         </div>
                         <button type="submit" class="submit-button">Send Message</button>
+                        <div class="form-success" id="formSuccess">Thanks! Your email client will open with your message pre-filled.</div>
                     </form>
                 </div>
             </div>
@@ -468,6 +486,14 @@
     </footer>
 
     <script>
+        // Active nav link
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav ul a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('nav-active');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -494,30 +520,50 @@
             const mailtoLink = `mailto:maricarmen@azuvila.co?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(email)}`;
             
             window.location.href = mailtoLink;
-            
-            // Show confirmation
-            alert('Thank you! Your default email client will open with your message pre-filled.');
-            
+
+            // Show inline confirmation
+            const success = document.getElementById('formSuccess');
+            success.style.display = 'block';
+
             // Reset form
             this.reset();
         });
 
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navList = document.querySelector('nav ul');
-            if (navList.style.display === 'flex') {
-                navList.style.display = 'none';
-            } else {
-                navList.style.display = 'flex';
-                navList.style.flexDirection = 'column';
-                navList.style.position = 'absolute';
-                navList.style.top = '80px';
-                navList.style.right = '2rem';
-                navList.style.background = 'var(--navy)';
-                navList.style.padding = '1rem';
-                navList.style.borderRadius = '8px';
-                navList.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+        const mobileBtn = document.querySelector('.mobile-menu');
+        const navList = document.querySelector('nav ul');
+
+        function openMenu() {
+            navList.style.display = 'flex';
+            navList.style.flexDirection = 'column';
+            navList.style.position = 'absolute';
+            navList.style.top = '80px';
+            navList.style.right = '2rem';
+            navList.style.background = 'var(--navy)';
+            navList.style.padding = '1rem';
+            navList.style.borderRadius = '8px';
+            navList.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+            mobileBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            navList.style.display = 'none';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        mobileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navList.style.display === 'flex' ? closeMenu() : openMenu();
+        });
+
+        document.addEventListener('click', function(e) {
+            if (navList.style.display === 'flex' && !navList.contains(e.target)) {
+                closeMenu();
             }
+        });
+
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     </script>
 </body>
