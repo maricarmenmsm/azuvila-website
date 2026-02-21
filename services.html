@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Azuvila</title>
-    <meta name="description" content="Comprehensive advisory services designed to strengthen your competitive position and accelerate growth.">
+    <title>Services | Business Development, Capture &amp; Proposal | Azuvila</title>
+    <meta name="description" content="Azuvila's advisory services include business development strategy, capture and proposal management, partnership and teaming strategy, and organizational development. Learn how we help you compete and grow.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Azuvila">
+    <meta property="og:url" content="https://azuvila.co/services.html">
+    <meta property="og:title" content="Services | Business Development, Capture & Proposal | Azuvila">
+    <meta property="og:description" content="Azuvila's advisory services include business development strategy, capture and proposal management, partnership and teaming strategy, and organizational development.">
+    <meta property="og:image" content="https://azuvila.co/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,7 +21,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --navy: #0a2632;
             --light-blue: #7dd3f5;
@@ -23,13 +29,13 @@
             --text-dark: #333;
             --text-light: #666;
         }
-        
+
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
         }
-        
+
         /* Header & Navigation */
         header {
             background: var(--navy);
@@ -40,7 +46,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -49,19 +55,19 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 1rem;
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 50px;
             height: 50px;
         }
-        
+
         .logo-text h1 {
             font-size: 1.5rem;
             font-weight: 300;
@@ -69,27 +75,27 @@
             margin-bottom: 0.2rem;
             color: white;
         }
-        
+
         .logo-text p {
             font-size: 0.7rem;
             color: var(--light-blue);
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
+
         nav a:hover {
             color: var(--light-blue);
         }
@@ -99,7 +105,7 @@
             border-bottom: 2px solid var(--light-blue);
             padding-bottom: 2px;
         }
-        
+
         .mobile-menu {
             display: none;
             background: none;
@@ -108,7 +114,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Page Header */
         .page-header {
             background: linear-gradient(135deg, var(--navy) 0%, #164558 100%);
@@ -116,7 +122,7 @@
             padding: 4rem 2rem;
             text-align: center;
         }
-        
+
         .page-header h2 {
             font-size: 2.5rem;
             font-weight: 300;
@@ -129,7 +135,14 @@
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
+        .page-header .expand-hint {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            opacity: 0.65;
+            font-style: italic;
+        }
+
         /* Services Section */
         .services-section {
             padding: 5rem 2rem;
@@ -161,6 +174,11 @@
         .service-card:hover {
             box-shadow: 0 8px 28px rgba(10,38,50,0.28);
             transform: translateY(-3px);
+        }
+
+        .service-card:focus-visible {
+            outline: 2px solid var(--light-blue);
+            outline-offset: 3px;
         }
 
         .card-button {
@@ -279,7 +297,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
         }
-        
+
         /* Footer */
         footer {
             background: #000;
@@ -287,26 +305,40 @@
             padding: 2rem;
             text-align: center;
         }
-        
+
         footer p {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .page-header h2 {
                 font-size: 1.8rem;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -336,13 +368,14 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" aria-label="Open navigation menu">☰</button>
         </nav>
     </header>
 
     <section class="page-header">
         <h2>Service Offerings</h2>
         <p>Comprehensive advisory services designed to strengthen your competitive position and accelerate growth</p>
+        <p class="expand-hint">Select any service card to explore what's included</p>
     </section>
 
     <section class="services-section">
@@ -350,7 +383,7 @@
             <div class="services-grid">
 
                 <!-- Strategic Growth & Business Development -->
-                <div class="service-card" onclick="toggleCard(this)">
+                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -376,7 +409,7 @@
                 </div>
 
                 <!-- Capture & Proposal Management -->
-                <div class="service-card" onclick="toggleCard(this)">
+                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -404,7 +437,7 @@
                 </div>
 
                 <!-- Partnership & Teaming Strategy -->
-                <div class="service-card" onclick="toggleCard(this)">
+                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -432,7 +465,7 @@
                 </div>
 
                 <!-- Organizational Development -->
-                <div class="service-card" onclick="toggleCard(this)">
+                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -478,6 +511,11 @@
 
     <footer>
         <p>&copy; 2026 Azuvila. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="https://www.linkedin.com/company/azuvila/" target="_blank" rel="noopener">LinkedIn</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.instagram.com/azuvila.co" target="_blank" rel="noopener">Instagram</a>
+        </p>
     </footer>
 
     <script>
@@ -529,7 +567,18 @@
         // Service card toggle
         function toggleCard(card) {
             card.classList.toggle('active');
+            card.setAttribute('aria-expanded', card.classList.contains('active') ? 'true' : 'false');
         }
+
+        // Keyboard accessibility for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleCard(this);
+                }
+            });
+        });
     </script>
 </body>
 </html>

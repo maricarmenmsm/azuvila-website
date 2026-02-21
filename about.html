@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Azuvila</title>
-    <meta name="description" content="Learn about Azuvila and founder Maricarmen Smith-Martinez, a strategic growth and partnerships executive with extensive cross-sector leadership experience.">
+    <title>About Maricarmen Smith-Martinez | Azuvila Advisory</title>
+    <meta name="description" content="Maricarmen Smith-Martinez is a strategic growth and partnerships executive and founder of Azuvila, a Woman-Owned Small Business advising organizations on business development, capture management, and federal market growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Azuvila">
+    <meta property="og:url" content="https://azuvila.co/about.html">
+    <meta property="og:title" content="About Maricarmen Smith-Martinez | Azuvila Advisory">
+    <meta property="og:description" content="Maricarmen Smith-Martinez is a strategic growth and partnerships executive and founder of Azuvila, a Woman-Owned Small Business advising organizations on business development, capture management, and federal market growth.">
+    <meta property="og:image" content="https://azuvila.co/maricarmen.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,7 +21,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --navy: #0a2632;
             --light-blue: #7dd3f5;
@@ -23,13 +29,13 @@
             --text-dark: #333;
             --text-light: #666;
         }
-        
+
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
         }
-        
+
         /* Header & Navigation */
         header {
             background: var(--navy);
@@ -40,7 +46,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -49,19 +55,19 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 1rem;
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 50px;
             height: 50px;
         }
-        
+
         .logo-text h1 {
             font-size: 1.5rem;
             font-weight: 300;
@@ -69,27 +75,27 @@
             margin-bottom: 0.2rem;
             color: white;
         }
-        
+
         .logo-text p {
             font-size: 0.7rem;
             color: var(--light-blue);
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
+
         nav a:hover {
             color: var(--light-blue);
         }
@@ -99,7 +105,7 @@
             border-bottom: 2px solid var(--light-blue);
             padding-bottom: 2px;
         }
-        
+
         .mobile-menu {
             display: none;
             background: none;
@@ -108,7 +114,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Page Header */
         .page-header {
             background: linear-gradient(135deg, var(--navy) 0%, #164558 100%);
@@ -116,24 +122,24 @@
             padding: 4rem 2rem;
             text-align: center;
         }
-        
+
         .page-header h2 {
             font-size: 2.5rem;
             font-weight: 300;
             margin-bottom: 0.5rem;
         }
-        
+
         /* About Content */
         .about-section {
             padding: 5rem 2rem;
             background: white;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .about-grid {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -141,60 +147,60 @@
             align-items: start;
             margin-bottom: 4rem;
         }
-        
+
         .photo-container {
             position: relative;
         }
-        
+
         .profile-photo {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .about-content h3 {
             color: var(--navy);
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             font-weight: 400;
         }
-        
+
         .about-content p {
             color: var(--text-light);
             margin-bottom: 1.5rem;
             line-height: 1.8;
             font-size: 1.05rem;
         }
-        
+
         .credentials-section {
             background: var(--gray-bg);
             padding: 3rem;
             border-radius: 8px;
             margin-top: 3rem;
         }
-        
+
         .credentials-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
         }
-        
+
         .credential-box h4 {
             color: var(--navy);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
-        
+
         .credential-box ul {
             list-style: none;
             color: var(--text-light);
         }
-        
+
         .credential-box li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #ddd;
         }
-        
+
         .credential-box li:last-child {
             border-bottom: none;
         }
@@ -214,7 +220,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
         }
-        
+
         .cta-section {
             background: var(--gray-bg);
             padding: 4rem 2rem;
@@ -241,31 +247,45 @@
             padding: 2rem;
             text-align: center;
         }
-        
+
         footer p {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .page-header h2 {
                 font-size: 1.8rem;
             }
-            
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .credentials-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -288,7 +308,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" aria-label="Open navigation menu">☰</button>
         </nav>
     </header>
 
@@ -349,6 +369,11 @@
 
     <footer>
         <p>&copy; 2026 Azuvila. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="https://www.linkedin.com/company/azuvila/" target="_blank" rel="noopener">LinkedIn</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.instagram.com/azuvila.co" target="_blank" rel="noopener">Instagram</a>
+        </p>
     </footer>
 
     <script>
