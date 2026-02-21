@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azuvila - Connecting Purpose with Partners</title>
-    <meta name="description" content="Azuvila partners with small businesses to accelerate growth through strategic planning and sustainable business development systems.">
+    <title>Azuvila | Business Development &amp; Growth Advisory</title>
+    <meta name="description" content="Azuvila partners with small businesses to build strategic business development systems, win government contracts, and accelerate sustainable growth. Woman-Owned Small Business (WOSB).">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Azuvila">
+    <meta property="og:url" content="https://azuvila.co/">
+    <meta property="og:title" content="Azuvila | Business Development & Growth Advisory">
+    <meta property="og:description" content="Azuvila partners with small businesses to build strategic business development systems, win government contracts, and accelerate sustainable growth. Woman-Owned Small Business (WOSB).">
+    <meta property="og:image" content="https://azuvila.co/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,7 +21,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --navy: #0a2632;
             --light-blue: #7dd3f5;
@@ -23,13 +29,13 @@
             --text-dark: #333;
             --text-light: #666;
         }
-        
+
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
         }
-        
+
         /* Header & Navigation */
         header {
             background: var(--navy);
@@ -40,7 +46,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -49,19 +55,19 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 1rem;
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 50px;
             height: 50px;
         }
-        
+
         .logo-text h1 {
             font-size: 1.5rem;
             font-weight: 300;
@@ -69,27 +75,27 @@
             margin-bottom: 0.2rem;
             color: white;
         }
-        
+
         .logo-text p {
             font-size: 0.7rem;
             color: var(--light-blue);
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
+
         nav a:hover {
             color: var(--light-blue);
         }
@@ -99,7 +105,7 @@
             border-bottom: 2px solid var(--light-blue);
             padding-bottom: 2px;
         }
-        
+
         .mobile-menu {
             display: none;
             background: none;
@@ -108,7 +114,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--navy) 0%, #164558 100%);
@@ -116,26 +122,26 @@
             padding: 6rem 2rem;
             text-align: center;
         }
-        
+
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero h2 {
             font-size: 2.5rem;
             font-weight: 300;
             margin-bottom: 1.5rem;
             line-height: 1.3;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2rem;
             opacity: 0.95;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: var(--light-blue);
@@ -146,10 +152,55 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
+        }
+
+        /* Who We Help Section */
+        #who-we-help {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .who-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .who-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 1.2rem;
+            color: var(--light-blue);
+        }
+
+        .who-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .who-card h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .who-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Process Section */
@@ -194,41 +245,41 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         /* Contact Section */
         #contact {
             background: var(--navy);
             color: white;
             padding: 5rem 2rem;
         }
-        
+
         #contact .section-header h2 {
             color: white;
         }
-        
+
         #contact .section-header p {
             color: rgba(255,255,255,0.9);
         }
-        
+
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             margin-top: 3rem;
         }
-        
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: start;
             gap: 1rem;
         }
-        
+
         .contact-item-icon {
             font-size: 1.5rem;
             margin-top: 0.2rem;
@@ -239,7 +290,7 @@
             justify-content: center;
             flex-shrink: 0;
         }
-        
+
         .contact-item-icon svg {
             width: 24px;
             height: 24px;
@@ -249,42 +300,42 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-        
+
         .contact-item h4 {
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-        
+
         .contact-item p {
             opacity: 0.9;
             line-height: 1.6;
         }
-        
+
         .contact-item a {
             color: var(--light-blue);
             text-decoration: none;
         }
-        
+
         .contact-item a:hover {
             text-decoration: underline;
         }
-        
+
         .contact-form {
             background: rgba(255,255,255,0.1);
             padding: 2rem;
             border-radius: 8px;
         }
-        
+
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -295,17 +346,17 @@
             border-radius: 4px;
             font-family: inherit;
         }
-        
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255,255,255,0.6);
         }
-        
+
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
-        
+
         .submit-button {
             background: var(--light-blue);
             color: var(--navy);
@@ -332,7 +383,11 @@
             text-align: center;
             margin-top: 1rem;
         }
-        
+
+        .form-success a {
+            color: var(--light-blue);
+        }
+
         /* Footer */
         footer {
             background: #000;
@@ -340,30 +395,48 @@
             padding: 2rem;
             text-align: center;
         }
-        
+
         footer p {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .hero h2 {
                 font-size: 1.8rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
             .contact-content {
                 grid-template-columns: 1fr;
             }
@@ -385,7 +458,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" aria-label="Open navigation menu">☰</button>
         </nav>
     </header>
 
@@ -394,6 +467,48 @@
             <h2>Strategy for Purpose-Driven Growth</h2>
             <p>Azuvila partners with small businesses and organizations to accelerate growth through strategic planning and sustainable business development systems that transform potential into performance.</p>
             <a href="services.html" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="who-we-help">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Help</h2>
+                <p>Azuvila works with organizations at pivotal moments of growth — where strategy, structure, and the right partnerships make all the difference.</p>
+            </div>
+            <div class="who-grid">
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Small Businesses Ready to Scale</h3>
+                    <p>Companies at a growth inflection point that need to professionalize their business development operations and build a repeatable pipeline for winning new business.</p>
+                </div>
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Organizations Pursuing New Markets</h3>
+                    <p>Businesses and nonprofits navigating competitive procurement environments, new industry verticals, or federal markets where strategic positioning is critical to winning.</p>
+                </div>
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Teams Building for the Long Term</h3>
+                    <p>Leaders investing in partnerships, teaming arrangements, and durable growth infrastructure — building not just for a single win, but a sustainable model for lasting success.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -440,7 +555,7 @@
                         <div>
                             <h4>Connect</h4>
                             <p>
-                                <a href="https://www.linkedin.com/company/azuvila/" target="_blank" rel="noopener">LinkedIn</a> | 
+                                <a href="https://www.linkedin.com/company/azuvila/" target="_blank" rel="noopener">LinkedIn</a> |
                                 <a href="https://www.instagram.com/azuvila.co" target="_blank" rel="noopener">Instagram</a>
                             </p>
                         </div>
@@ -474,7 +589,7 @@
                             <textarea id="message" name="message" required placeholder="Tell us about your business development needs..."></textarea>
                         </div>
                         <button type="submit" class="submit-button">Send Message</button>
-                        <div class="form-success" id="formSuccess">Thanks! Your email client will open with your message pre-filled.</div>
+                        <div class="form-success" id="formSuccess">Thanks! Your email client should open with your message pre-filled. If it didn't, reach us directly at <a href="mailto:maricarmen@azuvila.co">maricarmen@azuvila.co</a></div>
                     </form>
                 </div>
             </div>
@@ -483,6 +598,11 @@
 
     <footer>
         <p>&copy; 2026 Azuvila. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="https://www.linkedin.com/company/azuvila/" target="_blank" rel="noopener">LinkedIn</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.instagram.com/azuvila.co" target="_blank" rel="noopener">Instagram</a>
+        </p>
     </footer>
 
     <script>
@@ -511,14 +631,14 @@
         // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
+
             // Create mailto link with form data
             const mailtoLink = `mailto:maricarmen@azuvila.co?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(email)}`;
-            
+
             window.location.href = mailtoLink;
 
             // Show inline confirmation
