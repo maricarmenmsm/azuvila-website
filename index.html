@@ -15,6 +15,29 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Azuvila",
+        "url": "https://azuvila.co",
+        "logo": "https://azuvila.co/logo.png",
+        "description": "Azuvila partners with small businesses to build strategic business development systems, win government contracts, and accelerate sustainable growth.",
+        "founder": {
+            "@type": "Person",
+            "name": "Maricarmen Smith-Martinez"
+        },
+        "email": "maricarmen@azuvila.co",
+        "sameAs": [
+            "https://www.linkedin.com/company/azuvila/",
+            "https://www.instagram.com/azuvila.co"
+        ],
+        "naics": "541611",
+        "knowsAbout": ["Business Development", "Government Contracting", "Capture Management", "Proposal Development", "Partnership Strategy"],
+        "additionalType": "https://schema.org/Consortium",
+        "award": "Woman-Owned Small Business (WOSB)"
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -246,6 +269,48 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 1rem 0.5rem;
+        }
+
+        .process-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step h4 {
+            color: var(--navy);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
         /* Contact Section */
         #contact {
             background: var(--navy);
@@ -415,6 +480,17 @@
             color: white;
         }
 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
@@ -439,6 +515,10 @@
 
             .contact-content {
                 grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -477,7 +557,7 @@
                 <p>Azuvila works with organizations at pivotal moments of growth — where strategy, structure, and the right partnerships make all the difference.</p>
             </div>
             <div class="who-grid">
-                <div class="who-card">
+                <div class="who-card fade-in">
                     <div class="who-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
@@ -487,7 +567,7 @@
                     <h3>Small Businesses Ready to Scale</h3>
                     <p>Companies at a growth inflection point that need to professionalize their business development operations and build a repeatable pipeline for winning new business.</p>
                 </div>
-                <div class="who-card">
+                <div class="who-card fade-in">
                     <div class="who-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -497,7 +577,7 @@
                     <h3>Organizations Pursuing New Markets</h3>
                     <p>Businesses and nonprofits navigating competitive procurement environments, new industry verticals, or federal markets where strategic positioning is critical to winning.</p>
                 </div>
-                <div class="who-card">
+                <div class="who-card fade-in">
                     <div class="who-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -518,8 +598,30 @@
                 <h2>Our Approach</h2>
                 <p>A strategic process for transforming your business development capabilities</p>
             </div>
-            <div class="process-image-container">
-                <img src="approach.png" alt="Azuvila Approach" class="process-image">
+            <div class="process-image-container fade-in">
+                <img src="approach.png" alt="Azuvila's four-stage approach cycle: Strategic Advisory to assess and position, Opportunity Sourcing to identify the right pursuits, Partnership Development to build teaming relationships, and Capture and Proposal to win new business" class="process-image">
+            </div>
+            <div class="process-steps fade-in">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h4>Strategic Advisory</h4>
+                    <p>Assess your position and build a growth roadmap</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h4>Opportunity Sourcing</h4>
+                    <p>Identify and qualify the right pursuits</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h4>Partnership Development</h4>
+                    <p>Build strategic teaming relationships</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h4>Capture &amp; Proposal</h4>
+                    <p>Develop winning strategies and submissions</p>
+                </div>
             </div>
         </div>
     </section>
@@ -685,6 +787,18 @@
         navList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+
+        // Scroll-triggered fade-in animations
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
     </script>
 </body>
 </html>

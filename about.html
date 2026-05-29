@@ -267,6 +267,17 @@
             color: white;
         }
 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
@@ -324,7 +335,7 @@
                 <p>Whether conducting market trend analysis, leading a business development audit, or supporting positioning efforts, our focus is enhancing your visibility and advancing your ability to grow. We improve systems, strengthen processes, and provide guidance to transform your capture and proposal structure.</p>
             </div>
 
-            <div class="about-grid">
+            <div class="about-grid fade-in">
                 <div class="photo-container">
                     <img src="maricarmen.png" alt="Maricarmen Smith-Martinez" class="profile-photo">
                     <div style="margin-top: 1.5rem; text-align: center;">
@@ -339,7 +350,7 @@
                 </div>
             </div>
 
-            <div class="credentials-section">
+            <div class="credentials-section fade-in">
                 <div class="credentials-grid">
                     <div class="credential-box">
                         <h4>Business Classification</h4>
@@ -359,7 +370,7 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section fade-in">
         <div class="container">
             <h3>Ready to grow?</h3>
             <p>Let's discuss how Azuvila can support your business development goals</p>
@@ -421,6 +432,18 @@
         navList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+
+        // Scroll-triggered fade-in animations
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
     </script>
 </body>
 </html>
