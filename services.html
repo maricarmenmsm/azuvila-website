@@ -211,6 +211,14 @@
             margin: 0;
         }
 
+        .card-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.88rem;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
         .card-chevron {
             margin-top: 1rem;
             color: var(--light-blue);
@@ -325,6 +333,17 @@
             color: white;
         }
 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
@@ -383,7 +402,7 @@
             <div class="services-grid">
 
                 <!-- Strategic Growth & Business Development -->
-                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
+                <div class="service-card fade-in" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -392,6 +411,7 @@
                             </svg>
                         </div>
                         <h3>Strategic Growth &amp; Business Development</h3>
+                        <p class="card-subtitle">Build a repeatable pipeline for federal and commercial markets</p>
                         <div class="card-chevron">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -409,7 +429,7 @@
                 </div>
 
                 <!-- Capture & Proposal Management -->
-                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
+                <div class="service-card fade-in" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -419,6 +439,7 @@
                             </svg>
                         </div>
                         <h3>Capture &amp; Proposal Management</h3>
+                        <p class="card-subtitle">Win-focused strategies from opportunity through submission</p>
                         <div class="card-chevron">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -437,7 +458,7 @@
                 </div>
 
                 <!-- Partnership & Teaming Strategy -->
-                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
+                <div class="service-card fade-in" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -448,6 +469,7 @@
                             </svg>
                         </div>
                         <h3>Partnership &amp; Teaming Strategy</h3>
+                        <p class="card-subtitle">Find, evaluate, and structure the right partnerships</p>
                         <div class="card-chevron">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -465,7 +487,7 @@
                 </div>
 
                 <!-- Organizational Development -->
-                <div class="service-card" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
+                <div class="service-card fade-in" onclick="toggleCard(this)" tabindex="0" role="button" aria-expanded="false">
                     <div class="card-button">
                         <div class="card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -481,6 +503,7 @@
                             </svg>
                         </div>
                         <h3>Organizational Development</h3>
+                        <p class="card-subtitle">Strengthen systems and processes for sustainable growth</p>
                         <div class="card-chevron">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -501,7 +524,7 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section fade-in">
         <div class="container">
             <h3>Ready to grow?</h3>
             <p>Let's discuss how Azuvila can support your business development goals</p>
@@ -579,6 +602,18 @@
                 }
             });
         });
+
+        // Scroll-triggered fade-in animations
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
     </script>
 </body>
 </html>
