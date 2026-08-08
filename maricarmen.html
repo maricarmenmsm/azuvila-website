@@ -189,16 +189,17 @@
             overflow: hidden;
             box-shadow: 0 16px 44px rgba(0,0,0,0.4);
         }
+        /* Subtle: a hint of cool-left / warm-right, features stay natural. */
         .hero-photo-wrap::after {
             content: "";
             position: absolute;
             inset: 0;
             background: linear-gradient(103deg,
-                rgba(10,38,50,0.68) 0%,
-                rgba(18,69,91,0.34) 42%,
-                rgba(224,152,46,0.30) 58%,
-                rgba(242,189,88,0.64) 100%);
-            mix-blend-mode: overlay;
+                rgba(10,38,50,0.30) 0%,
+                rgba(18,69,91,0.13) 44%,
+                rgba(224,152,46,0.13) 58%,
+                rgba(242,189,88,0.30) 100%);
+            mix-blend-mode: soft-light;
             pointer-events: none;
         }
         .hero-photo {
@@ -208,7 +209,7 @@
             object-fit: cover;
             object-position: center top;
             display: block;
-            filter: grayscale(0.18) contrast(1.05) saturate(1.05);
+            filter: grayscale(0.05) contrast(1.03) saturate(1.03);
         }
 
         .hero h1 {
