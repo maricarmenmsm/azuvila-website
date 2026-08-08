@@ -7,7 +7,7 @@
     <meta name="description" content="The personal page of Maricarmen Smith-Martinez — strategic growth and partnerships executive, founder of Azuvila, Returned Peace Corps Volunteer, and nonprofit board leader connecting purpose with partners across sectors.">
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Maricarmen Smith-Martinez">
-    <meta property="og:url" content="https://maricarmen.azuvila.co/">
+    <meta property="og:url" content="https://azuvila.co/maricarmen">
     <meta property="og:title" content="Maricarmen Smith-Martinez | Strategy, Partnerships & Purpose">
     <meta property="og:description" content="Strategic growth and partnerships executive, founder of Azuvila, Returned Peace Corps Volunteer, and nonprofit board leader connecting purpose with partners across sectors.">
     <meta property="og:image" content="https://azuvila.co/maricarmen.png">
@@ -24,21 +24,24 @@
         }
 
         :root {
-            --navy: #0a2632;
-            --light-blue: #7dd3f5;
-            --gray-bg: #f8f9fa;
-            --text-dark: #333;
-            --text-light: #666;
+            /* Palette drawn from Maricarmen's ocean-and-sunlight portrait */
+            --navy: #0a2632;       /* deep ocean */
+            --ocean: #1f6a86;      /* mid-water blue-teal */
+            --gold: #e0982e;       /* sunlight — primary accent */
+            --gold-soft: #f2bd58;  /* warm highlight */
+            --sand: #f5efe3;       /* cream / sand ground */
+            --coral: #df5a3c;      /* coral pop — used sparingly */
+            --text-dark: #2b2f31;
+            --text-light: #5f6a6f;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
+            background: #fff;
         }
 
         /* Header & Navigation */
@@ -49,11 +52,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
         nav {
-            max-width: 1000px;
+            max-width: 1040px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -70,9 +73,7 @@
             letter-spacing: 1.5px;
         }
 
-        .brand strong {
-            font-weight: 600;
-        }
+        .brand strong { font-weight: 600; }
 
         .nav-links {
             display: flex;
@@ -87,12 +88,10 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--light-blue);
-        }
+        .nav-links a:hover { color: var(--gold-soft); }
 
         .nav-cta {
-            background: var(--light-blue);
+            background: var(--gold);
             color: var(--navy) !important;
             padding: 0.55rem 1.25rem;
             border-radius: 4px;
@@ -102,58 +101,118 @@
 
         .nav-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
+            box-shadow: 0 4px 15px rgba(224, 152, 46, 0.45);
         }
 
-        /* Hero */
+        /* Hero — split ocean-to-sunlight, echoing the portrait */
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #164558 100%);
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(103deg,
+                    var(--navy) 0%,
+                    #12455b 34%,
+                    var(--ocean) 48%,
+                    #c07f2b 60%,
+                    var(--gold) 100%);
             color: white;
             padding: 5rem 2rem;
         }
 
+        /* Decorative geometric accents (collage motifs) */
+        .hero .deco {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .deco.sun {
+            top: -80px; right: -60px;
+            width: 340px; height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(255,240,200,0.55) 0%, rgba(242,189,88,0.25) 40%, rgba(242,189,88,0) 70%);
+        }
+        .deco.ring {
+            top: 40px; left: 30px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            border: 2px solid rgba(245,239,227,0.35);
+        }
+        .deco.dots {
+            top: 30px; right: 40px;
+            width: 90px; height: 90px;
+            background-image: radial-gradient(rgba(245,239,227,0.5) 1.6px, transparent 1.6px);
+            background-size: 15px 15px;
+        }
+        .deco.square {
+            bottom: 46px; left: 8%;
+            width: 46px; height: 46px;
+            background: var(--coral);
+            opacity: 0.75;
+            transform: rotate(8deg);
+        }
+        .deco.lines {
+            bottom: 40px; left: 30px;
+            width: 130px; height: 46px;
+            background-image: linear-gradient(rgba(245,239,227,0.4) 2px, transparent 2px);
+            background-size: 100% 10px;
+        }
+
         .hero-inner {
-            max-width: 1000px;
+            position: relative;
+            z-index: 1;
+            max-width: 1040px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 360px 1fr;
             gap: 3.5rem;
             align-items: center;
         }
 
+        /* Portrait frame — collage drops in here */
+        .hero-photo-frame {
+            position: relative;
+            justify-self: center;
+        }
+        .hero-photo-frame::before {
+            content: "";
+            position: absolute;
+            inset: 16px -16px -16px 16px;
+            background: var(--gold);
+            border-radius: 12px;
+            opacity: 0.85;
+        }
         .hero-photo {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
             object-fit: cover;
             object-position: center top;
-            border: 5px solid rgba(125, 211, 245, 0.35);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-            justify-self: center;
+            border-radius: 12px;
+            box-shadow: 0 16px 44px rgba(0,0,0,0.4);
+            display: block;
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
+            line-height: 1.15;
+            margin-bottom: 0.85rem;
+            text-wrap: balance;
         }
-
-        .hero h1 strong {
-            font-weight: 600;
-        }
+        .hero h1 strong { font-weight: 600; }
 
         .hero .role {
-            color: var(--light-blue);
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
+            color: #fdf3dd;
+            font-size: 1.02rem;
+            letter-spacing: 0.3px;
             margin-bottom: 1.25rem;
+            font-weight: 500;
         }
 
         .hero .tagline {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             line-height: 1.7;
-            opacity: 0.95;
+            color: rgba(255,255,255,0.96);
             max-width: 540px;
             margin-bottom: 2rem;
         }
@@ -167,7 +226,7 @@
 
         .btn-primary {
             display: inline-block;
-            background: var(--light-blue);
+            background: var(--gold);
             color: var(--navy);
             padding: 0.9rem 2rem;
             text-decoration: none;
@@ -175,46 +234,48 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(125, 211, 245, 0.4);
+            box-shadow: 0 6px 18px rgba(224, 152, 46, 0.5);
         }
 
         .btn-outline {
             display: inline-block;
-            border: 1.5px solid rgba(255,255,255,0.6);
+            border: 1.5px solid rgba(255,255,255,0.7);
             color: white;
             padding: 0.9rem 2rem;
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
-            transition: border-color 0.3s, color 0.3s;
+            transition: border-color 0.3s, color 0.3s, background 0.3s;
         }
-
         .btn-outline:hover {
-            border-color: var(--light-blue);
-            color: var(--light-blue);
+            border-color: var(--gold-soft);
+            color: var(--navy);
+            background: var(--gold-soft);
         }
 
         /* Sections */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1040px; margin: 0 auto; }
 
-        section.block {
-            padding: 4.5rem 2rem;
-        }
-
-        section.block.white { background: white; }
-        section.block.gray { background: var(--gray-bg); }
+        section.block { padding: 4.5rem 2rem; }
+        section.block.white { background: #fff; }
+        section.block.sand { background: var(--sand); }
 
         .section-title {
             font-size: 1.9rem;
             color: var(--navy);
             font-weight: 400;
             margin-bottom: 1.5rem;
+            text-wrap: balance;
+        }
+        .section-title .accent-rule {
+            display: block;
+            width: 54px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+            margin-top: 0.9rem;
         }
 
         .about p {
@@ -224,10 +285,8 @@
             margin-bottom: 1.25rem;
             max-width: 780px;
         }
-
         .about strong { color: var(--text-dark); }
 
-        /* Involvement cards */
         .section-intro {
             color: var(--text-light);
             font-size: 1.05rem;
@@ -235,6 +294,7 @@
             max-width: 700px;
         }
 
+        /* Involvement cards */
         .cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -242,30 +302,33 @@
         }
 
         .card {
-            background: white;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #ece5d7;
+            border-radius: 10px;
             padding: 1.75rem;
+            border-top: 3px solid var(--ocean);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .gray .card { background: white; }
+        .card:nth-child(3n+1) { border-top-color: var(--gold); }
+        .card:nth-child(3n+2) { border-top-color: var(--ocean); }
+        .card:nth-child(3n+3) { border-top-color: var(--coral); }
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(10, 38, 50, 0.1);
+            box-shadow: 0 10px 26px rgba(10, 38, 50, 0.12);
         }
 
         .card .eyebrow {
             display: inline-block;
             font-size: 0.72rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
-            color: var(--light-blue);
-            background: var(--navy);
-            padding: 0.25rem 0.7rem;
+            color: var(--navy);
+            background: #f0e6d2;
+            padding: 0.28rem 0.7rem;
             border-radius: 20px;
             margin-bottom: 0.9rem;
+            font-weight: 600;
         }
 
         .card h3 {
@@ -287,11 +350,10 @@
             font-weight: 600;
             font-size: 0.9rem;
             text-decoration: none;
-            border-bottom: 2px solid var(--light-blue);
+            border-bottom: 2px solid var(--gold);
             padding-bottom: 1px;
         }
-
-        .card a.card-link:hover { color: #164558; }
+        .card a.card-link:hover { color: var(--ocean); }
 
         /* Facts strip */
         .facts {
@@ -300,16 +362,13 @@
             gap: 1.5rem;
             margin-top: 3rem;
         }
-
         .fact {
             text-align: center;
-            padding: 1.5rem 1rem;
-            background: var(--gray-bg);
-            border-radius: 8px;
+            padding: 1.6rem 1rem;
+            background: var(--sand);
+            border-radius: 10px;
         }
-
-        .gray .fact { background: white; }
-
+        .sand .fact { background: #fff; }
         .fact .fact-label {
             display: block;
             color: var(--navy);
@@ -317,7 +376,6 @@
             font-size: 1.02rem;
             margin-bottom: 0.35rem;
         }
-
         .fact .fact-sub {
             color: var(--text-light);
             font-size: 0.9rem;
@@ -336,10 +394,20 @@
             background: var(--navy);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
+        #connect .glow {
+            position: absolute;
+            top: -120px; left: 50%;
+            transform: translateX(-50%);
+            width: 460px; height: 460px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(242,189,88,0.22) 0%, rgba(242,189,88,0) 70%);
+            pointer-events: none;
+        }
+        #connect .container { position: relative; z-index: 1; }
         #connect .section-title { color: white; }
-
         #connect .connect-sub {
             color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
@@ -362,9 +430,8 @@
             justify-content: center;
             align-items: center;
         }
-
         .social-row a {
-            color: rgba(255,255,255,0.75);
+            color: rgba(255,255,255,0.78);
             text-decoration: none;
             font-size: 0.9rem;
             display: inline-flex;
@@ -372,14 +439,8 @@
             gap: 0.45rem;
             transition: color 0.3s;
         }
-
-        .social-row a:hover { color: var(--light-blue); }
-
-        .social-row svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
+        .social-row a:hover { color: var(--gold-soft); }
+        .social-row svg { width: 18px; height: 18px; fill: currentColor; }
 
         /* Footer */
         footer {
@@ -388,55 +449,40 @@
             padding: 2rem;
             text-align: center;
         }
-
-        footer p {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        footer a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-        }
-
-        footer a:hover { color: white; }
+        footer p { font-size: 0.85rem; opacity: 0.85; }
+        footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+        footer a:hover { color: var(--gold-soft); }
 
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .fade-in { opacity: 1; transform: none; transition: none; }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links a:not(.nav-cta) {
-                display: none;
-            }
+            .nav-links a:not(.nav-cta) { display: none; }
 
+            .hero { padding: 3.5rem 1.5rem; }
             .hero-inner {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.25rem;
                 text-align: center;
             }
-
-            .hero-photo {
-                width: 200px;
-                height: 200px;
-            }
-
+            .hero-photo-frame { max-width: 300px; margin: 0 auto; }
             .hero h1 { font-size: 2rem; }
-
             .hero .tagline { margin-left: auto; margin-right: auto; }
-
             .hero-actions { justify-content: center; }
+            .section-title .accent-rule { margin-left: auto; margin-right: auto; }
 
+            .hero .deco { display: none; }
             .cards { grid-template-columns: 1fr; }
-
             .facts { grid-template-columns: 1fr; }
         }
     </style>
@@ -454,11 +500,19 @@
     </header>
 
     <section class="hero" id="top">
+        <span class="deco sun" aria-hidden="true"></span>
+        <span class="deco ring" aria-hidden="true"></span>
+        <span class="deco dots" aria-hidden="true"></span>
+        <span class="deco lines" aria-hidden="true"></span>
+        <span class="deco square" aria-hidden="true"></span>
         <div class="hero-inner">
-            <img src="maricarmen.png" alt="Maricarmen Smith-Martinez" class="hero-photo">
+            <div class="hero-photo-frame">
+                <!-- Hero portrait: swap src to Maricarmen's ocean/sunlight collage once uploaded (using current headshot as a stand-in) -->
+                <img src="maricarmen.png" alt="Maricarmen Smith-Martinez" class="hero-photo">
+            </div>
             <div class="hero-text">
                 <h1>Hi, I'm <strong>Maricarmen</strong>.</h1>
-                <p class="role">Founder &amp; Strategic Director of Azuvila · Strategic Growth &amp; Partnerships Executive · Returned Peace Corps Volunteer</p>
+                <p class="role">Founder &amp; CEO of Azuvila · Strategic Growth &amp; Partnerships Executive · Returned Peace Corps Volunteer</p>
                 <p class="tagline">Passionate about people and transformative solutions that drive global social good. I bring strategic partnerships, international business, and servant leadership together to connect people and build communities that expand horizons for meaningful change — within ourselves, across our planet, and beyond. ✨</p>
                 <div class="hero-actions">
                     <a href="https://calendar.notion.so/meet/maricarmenmsm/book" target="_blank" rel="noopener" class="btn-primary">Book time to chat</a>
@@ -470,20 +524,20 @@
 
     <section class="block white" id="about">
         <div class="container about">
-            <h2 class="section-title">About me</h2>
-            <p>For nearly two decades I've worked at the intersection of strategy, partnerships, and purpose — across international development, government contracting, and nonprofit leadership. I'm a strategist known for spearheading multimillion-dollar international portfolio growth while strengthening the organizational infrastructure that makes growth last, and a changemaker who loves cultivating high-value partnerships and connecting strategic vision with purpose-driven implementation.</p>
-            <p>Today I'm the <strong>Founder &amp; Strategic Director of Azuvila</strong>, a Woman-Owned Small Business advising small businesses and mission-driven organizations on strategic growth, business development, capture and proposal strategy, and nonprofit fundraising and capacity. Before founding Azuvila, I spent twelve years at <strong>Bixal</strong>, most recently as Senior Director of Strategic Growth &amp; Partnerships — building an international development practice from the ground up and helping grow a global portfolio to roughly $100M across USAID Missions on three continents.</p>
-            <p>My path started in the <strong>Peace Corps</strong> as a Rural Community Development Volunteer in Costa Rica (2006–2008). That experience shaped everything that followed — a belief that the right people, connected around a shared purpose, can move mountains. I stay close to that community through board and advisory roles, and I hold an Executive Master of Global Affairs and Management from the Thunderbird School of Global Management and a BA from Emory University.</p>
+            <h2 class="section-title">About me<span class="accent-rule"></span></h2>
+            <p>For nearly two decades I've worked at the intersection of purpose and partnerships: across international development, government contracting, and nonprofit leadership. I'm a strategist known for spearheading multimillion-dollar international portfolio growth while strengthening the organizational infrastructure that makes growth last, and a changemaker who loves cultivating high-value partnerships and connecting strategic vision with purpose-driven implementation.</p>
+            <p>Today I'm the <strong>Founder &amp; CEO of Azuvila</strong>, a Woman-Owned Small Business advising small businesses and mission-driven organizations on strategic growth, business development, capture and proposal strategy, and nonprofit fundraising and capacity. Before founding Azuvila, I spent twelve years at <strong>Bixal</strong>, where I helped build an international development practice from the ground up and grow a global portfolio to roughly $100M across USAID Missions on three continents.</p>
+            <p>My path started as a Rural Community Development Volunteer in the <strong>Peace Corps</strong> in Costa Rica (2006–2008), where I learned in practice that people are the key to success and that partnerships only work when they're connected around a shared purpose.</p>
         </div>
     </section>
 
-    <section class="block gray" id="involvement">
+    <section class="block sand" id="involvement">
         <div class="container">
-            <h2 class="section-title">What I'm involved with</h2>
+            <h2 class="section-title">What I'm involved with<span class="accent-rule"></span></h2>
             <p class="section-intro">A few of the organizations and communities I'm proud to build with — as a founder, an executive, a board member, and a champion.</p>
             <div class="cards">
                 <div class="card fade-in">
-                    <span class="eyebrow">Founder &amp; Strategic Director · 2025–Present</span>
+                    <span class="eyebrow">Founder &amp; CEO · 2025–Present</span>
                     <h3>Azuvila</h3>
                     <p>My advisory practice, helping small businesses and mission-driven organizations grow, win government contracts, and build the partnerships that make growth sustainable — plus nonprofit strategy and fundraising consulting.</p>
                     <a href="https://azuvila.co" target="_blank" rel="noopener" class="card-link">Visit azuvila.co →</a>
@@ -523,7 +577,7 @@
 
     <section class="block white">
         <div class="container">
-            <h2 class="section-title">At a glance</h2>
+            <h2 class="section-title">At a glance<span class="accent-rule"></span></h2>
             <div class="facts">
                 <div class="fact fade-in">
                     <span class="fact-label">Strategy &amp; Partnerships</span>
@@ -543,8 +597,9 @@
     </section>
 
     <section class="block" id="connect">
+        <span class="glow" aria-hidden="true"></span>
         <div class="container">
-            <h2 class="section-title">Let's connect</h2>
+            <h2 class="section-title">Let's connect<span class="accent-rule"></span></h2>
             <p class="connect-sub">The best way to reach me is to grab 30 minutes on my calendar — everything we need to figure out usually fits in one good conversation.</p>
             <div class="connect-actions">
                 <a href="https://calendar.notion.so/meet/maricarmenmsm/book" target="_blank" rel="noopener" class="btn-primary">Book time to chat</a>
