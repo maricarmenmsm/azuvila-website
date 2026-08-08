@@ -181,15 +181,34 @@
             border-radius: 12px;
             opacity: 0.85;
         }
+        /* Photo wrapper carries the ocean-to-sunlight duotone wash so any clean
+           portrait is unified into the brand palette (no stray collage inlays). */
+        .hero-photo-wrap {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 16px 44px rgba(0,0,0,0.4);
+        }
+        .hero-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(103deg,
+                rgba(10,38,50,0.68) 0%,
+                rgba(18,69,91,0.34) 42%,
+                rgba(224,152,46,0.30) 58%,
+                rgba(242,189,88,0.64) 100%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
         .hero-photo {
             position: relative;
             width: 100%;
             aspect-ratio: 4 / 5;
             object-fit: cover;
             object-position: center top;
-            border-radius: 12px;
-            box-shadow: 0 16px 44px rgba(0,0,0,0.4);
             display: block;
+            filter: grayscale(0.18) contrast(1.05) saturate(1.05);
         }
 
         .hero h1 {
@@ -507,8 +526,10 @@
         <span class="deco square" aria-hidden="true"></span>
         <div class="hero-inner">
             <div class="hero-photo-frame">
-                <!-- Hero portrait: swap src to Maricarmen's ocean/sunlight collage once uploaded (using current headshot as a stand-in) -->
-                <img src="maricarmen.png" alt="Maricarmen Smith-Martinez" class="hero-photo">
+                <div class="hero-photo-wrap">
+                    <!-- Hero portrait: swap src to a clean headshot; the wrapper applies the ocean/sunlight duotone so it stays on-brand -->
+                    <img src="maricarmen.png" alt="Maricarmen Smith-Martinez" class="hero-photo">
+                </div>
             </div>
             <div class="hero-text">
                 <h1>Hi, I'm <strong>Maricarmen</strong>.</h1>
